@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn form</title>
+</head>
+
+<body>
+    <h1>Thẻ form để nhận lại dữ liệu, thu thập thông tin từ người dùng </h1>
+    <p>thu thập thông tin từ user và gửi lên sever là trang đc định ngĩa bởi thuộc tính action </p>
+    <b>Các thuộc tính của form HTML:</b>
+    <dl>
+        <h2 style="background-color: rgb(222, 18, 28);">Việc gửi đi k phụ thuộc vào mk input mà cứ cái nào có name là nó
+            gửi đi <br> vì nó gửi theo <span style="color: blue;"> name: value</span> </h2>
+        <dt><b>action:</b></dt>
+        <dd>Xác định hành động khi biểu mẫu được gửi đi! <br>
+            Thông thường, dữ liệu biểu mẫu được gửi đến một tệp trên máy chủ khi người dùng nhấp vào nút gửi.
+            <br><b>Nếu action trống thì hành động được đặt ở trang web hiện tại! </b>
+        </dd>
+        <dt><b>target:</b></dt>
+        <dd>Thuộc tính mục tiêu! chỉ định nơi phản hồi khi nhận biểu mẫu
+            <br> _blank _self _parent _top framename ( mặc định là: _self)
+
+        </dd>
+        <dt><b>method: </b></dt>
+        <dd>Thuộc tính method chỉ định phương thức HTTP sẽ được sử dụng khi gửi dữ liệu biểu mẫu.
+            <br> có thể là <b>get</b> hoặc <b>post</b>!
+            <br> Get là gửi qua url và nó k an toàn với những thông tin nhạy cảm!
+            <br> Post nối dữ liệu đc gửi vào trong thân html và nó an toàn
+            <br> ... nhiều khác biệt nữa... ( Luôn sử dụng POST nếu dữ liệu biểu mẫu chứa thông tin cá nhân hoặc nhạy
+            cảm!)
+        </dd>
+        <dt><b>autocomplete</b></dt>
+        <dd>thuộc tính: tự động điền: chỉ định xem một biểu mẫu nên bật hay tắt tính năng tự động hoàn thành.
+            Khi bật tính năng tự động điền,
+            trình duyệt sẽ tự động hoàn tất các giá trị dựa trên các giá trị mà người dùng đã nhập trước đó.</dd>
+        <dt><b>novalidate</b></dt>
+        <dd>là một thuộc tính boolean. <=> true or false <br>
+                hi xuất hiện, nó chỉ định rằng dữ liệu biểu mẫu (đầu vào) không được xác thực khi được gửi.</dd>
+    </dl>
+
+    <h1 style="background-color: yellow;">TRIỂN KHAI NHƯ THẾ NÀO?</h1>
+    <form action="">
+        <h3>đoạn text không xuống dòng</h3>
+        <label for="vanban">văn bản (text):</label>
+        <input type="text" id="vanban">
+
+        <br>
+        <hr>
+        <h3>label</h3>
+        <p><b>label là 1 nhãn</b> để chỉ định những thứ với nhau?! <br>
+            thuộc tính for của nhãn thì trùng với id của input mà ta muốn liên kết </p>
+        <br>
+        <hr>
+        <h3>type radio</h3>
+        <p> <b>type radio</b> dùng để người dùng chọn 1 lựa chọn hạn chế:
+        </p>
+        <br> Chọn 1 ngôn ngữ bạn yêu thích: <br>
+        <input type="radio" id="html" name="ngon_ngu" value="HTML">
+        <label for="html">HTML</label><br>
+        <input type="radio" id="css" name="ngon_ngu" value="CSS">
+        <label for="css">CSS</label><br>
+        <input type="radio" name="ngon_ngu" id="javascript" value="JAVASCRIPT">
+        <label for="javascript">JAVASCRIPT</label>
+        <br> <br>
+        <b>Bạn có yêu Hà không?</b> <br>
+        <input type="radio" name="yeuha" id="co" value="yes">
+        <label for="co">Yes</label>
+        <input type="radio" name="yeuha" id="ko" value="no">
+        <label for="ko">No</label>
+        <br>
+        <hr>
+        <h3>checkbox - hộp kiểm </h3>
+        <p>dùng để chọn nhiều - có hoặc không với 1 lựa chon!</p>
+        <b>Bạn đi phương tiện nào?</b><br>
+        <input type="checkbox" name="phuong_tien" id="phuong_tien1" value="xe_dap">
+        <label for="phuong_tien1">xe đạp</label><br>
+        <input type="checkbox" name="phuong_tien" id="phuong_tien2" value="xe_o_to">
+        <label for="phuong_tien1">ô tô</label><br>
+        <input type="checkbox" name="phuong_tien" id="phuong_tien3" value="may_bay">
+        <label for="phuong_tien1">máy bay</label>
+        <br>
+        <hr>
+        <h3>Thuộc tính: name</h3>
+        <p>Lưu ý mỗi trường đầu vào phải có một thuộc tính <b> name </b> được gửi. <br>
+            Nếu thuộc tính <b>name bị bỏ qua</b>, giá trị của trường đầu vào sẽ <b>không được gửi đi.</b></p>
+        <br>
+        <hr>
+        <h3>Select</h3>
+        <p>Phần select tử xác định danh sách thả xuống: với các option thuộc tính name đặt trong tag select
+            <br> theo mặc định chọn đầu là mục đầu tiên ta thêm <b>selected</b> cho cái ta muốn mặc định
+            <br> thêm <b>size</b> để hiện bao nhiêu cái một lúc! <b>multiple</b>giữ ctrl để đc lựa chọn nhiều
+        </p>
+        <label for="do_uong"><b>Bạn muốn uống gì?</b></label>
+        <br>
+        <select name="do_uong" id="do_uong">
+            <option value="nuoc_loc">Nước lọc</option>
+            <option value="cocacola">cocacola</option>
+            <option value="Sting" selected>Sting</option>
+
+        </select>
+        <hr>
+        <br>
+        <h3>textarea (Nhập nhiều dòng)</h3>
+        <p>Đơn giản vì trong textarea nó có name thì summid đi là oke </p>\
+        <b>Textarea 5dong 55cot</b> <br>
+        <textarea name="message" rows="5" cols="55">
+            Ghi thông điệp vào đây oke! 
+            </textarea>
+        <hr>
+        <br>
+        <h3>Button -> nút bấn để gọi js</h3>
+        <p>và nó có nhiều công dụng qua onclick và dù nó là button rồi nhưng vẫn nên chỉ rõ type của nó là: button! </p>
+        <button style="color: red; background-color: beige;" type="button" onclick="alert('Dkid leanr HTML')">
+            click me! </button>
+        <hr>
+        <br>
+        <h3>phần tử fieldset và legend </h3>
+        <p>Phần fieldset tử được sử dụng để nhóm các dữ liệu liên quan trong một biểu mẫu.
+            <b>fieldset</b> tức là tạo ra 1 biểu mẫu -> đơn giản là 1 cái viền! <br>
+            Phần legend tử xác định chú thích cho fieldset.
+            <b>legend</b> Tức là tên của biểu mẫu đó! tên cái viền đc nhóm chung lại!
+        </p>
+
+        <fieldset>
+            <legend>Cho tôi biết họ tên bạn!</legend>
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname"><br><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+        <hr>
+        <br>
+        <h3>Phần tử datalist</h3>
+        <p>Nó giống select nhưng cái này kiểu có thể là gợi ý cho người ta nhập tay
+            hoặc cũng có thể là chọn luôn! <br>
+            1 input nhận đầu vào có thuộc tính list đc đặt trước, thẻ datalist sẽ có các option để chọn và id của nó
+            trùng với list của input! <b> >Nhớ là input phải có name </b></p>
+        <b>Bạn chọn trình duyệt nào? </b> <br>
+        <input list="browsers" name="browsers">
+        <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+        <br>
+        <hr>
+        <h3>Phần tử output </h3>
+        <p> output: đại diện cho kết quả của phép tính (giống như phép tính được thực hiện bởi tập lệnh).
+            <br> <b> CHƯA HIỂU OUTPUT LÀ GÌ!?</b>
+        </p>
+
+    </form>
+
+
+</body>
+
+</html>
